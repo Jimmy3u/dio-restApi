@@ -1,14 +1,11 @@
 package me.dio.santanderbootcamp2023.model;
 
-import java.sql.Timestamp;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-
 
 @Entity(name = "tb_user_posts")
 public class UserPost {
@@ -17,11 +14,13 @@ public class UserPost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String postContent;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp timeDate;
     @ManyToOne
+    @JoinColumn(name="poster_id", referencedColumnName = "id")
     private User user;
 
+    public Long getId() {
+        return id;
+    }
     public String getPostContent() {
         return postContent;
     }

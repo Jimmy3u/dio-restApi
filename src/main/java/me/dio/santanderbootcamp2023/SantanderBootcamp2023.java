@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SantanderBootcamp2023Application {
+public class SantanderBootcamp2023 {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SantanderBootcamp2023Application.class, args);
+		SpringApplication.run(SantanderBootcamp2023.class, args);
 	}
 }
